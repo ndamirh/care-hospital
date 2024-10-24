@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ward</title>
+    <link rel="stylesheet" href="appointment.css"> <!-- Link to your separate CSS file -->
+</head>
+<body>
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <div class="sidebar-brand">
+                <span><img src="img/PANTAI HOSPITAL.jpg" width="50" height="50" alt="Hospital Pantai Logo"> Care Hospitals</span>
+            </div>
+            <ul class="sidebar-nav">
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="appointments.html">Appointments</a></li>
+                <li><a href="payments.html">Payment History</a></li>
+                <li><a href="wardss.php" class="active">Ward</a></li>
+            </ul>
+        </nav>
+        
+        <!-- Main content -->
+        <main id="content-wrapper">
+            <header class="topbar">
+                <span>Appointment</span>
+            </header>
+            <br>
+            <form>
+                <div class="date-time-container">
+                    <!-- Calendar Section -->
+                     <div class="calendar-container">
+            <label for="date-input">Select your preferred date*</label>
+            <input type="text" id="date-input" placeholder="DD/MM/YYYY" readonly>
+
+            <div class="month-navigation">
+                <button id="prev-month">&lt;</button>
+                <span id="calendar-month">October, 2024</span>
+                <button id="next-month">&gt;</button>
+            </div>
+
+            <table class="calendar">
+                <thead>
+                    <tr>
+                        <th>SU</th>
+                        <th>MO</th>
+                        <th>TU</th>
+                        <th>WE</th>
+                        <th>TH</th>
+                        <th>FR</th>
+                        <th>SA</th>
+                    </tr>
+                </thead>
+                <tbody id="calendar-body">
+                    <!-- Calendar days will be generated here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+                        <!-- Time Picker Section -->
+                        <div class="time-picker">
+                            <label>Select your preferred time*</label>
+                            <div class="time-buttons">
+                                <button type="button">09:00 AM</button>
+                                <button type="button">09:30 AM</button>
+                                <button type="button">10:00 AM</button>
+                                <button type="button">10:30 AM</button>
+                                <button type="button">11:00 AM</button>
+                                <button type="button">11:30 AM</button>
+                                <button type="button">12:00 PM</button>
+                                <button type="button">12:30 PM</button>
+                                <button type="button">02:00 PM</button>
+                                <button type="button">02:30 PM</button>
+                                <button type="button">03:00 PM</button>
+                                <button type="button">03:30 PM</button>
+                                <button type="button">04:00 PM</button>
+                                <button type="button">04:30 PM</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <!-- Patient Details Form -->
+            <br>
+            <div class="patient-details-container">
+                <h1>Butiran Pesakit</h1>
+
+                <form action="#">
+                    <label for="nama-pesakit">Nama Pesakit*</label>
+                    <input type="text" id="nama-pesakit" name="nama-pesakit" required>
+
+                    <label for="tarikh-lahir">Tarikh Lahir*</label>
+                    <input type="date" id="tarikh-lahir" name="tarikh-lahir" required>
+
+                    <label for="no-ic">Nombor Kad Pengenalan/Pasport*</label>
+                    <input type="text" id="no-ic" name="no-ic" required>
+
+                    <label for="no-hubungi">Nombor untuk Dihubungi*</label>
+                    <input type="tel" id="no-hubungi" name="no-hubungi" required>
+
+                    <label for="emel">Emel*</label>
+                    <input type="email" id="emel" name="emel" required>
+
+                    <p>Nota: Ruang yang bertanda bintang '*' adalah wajib diisi.</p>
+                    
+                    <p>*Dengan menyerahkan borang ini, saya mengakui bahawa data yang diberikan adalah tertakluk kepada Notis Perlindungan Data Peribadi IHH MY.</p>
+                    
+                    <label>
+                        <input type="radio" name="marketing" value="agree" required>
+                        Saya bersetuju menerima mesej atau cagaran berkaitan pemasaran.
+                    </label><br>
+                    
+                    <label>
+                        <input type="radio" name="marketing" value="disagree" required>
+                        Saya tidak bersetuju menerima mesej atau cagaran berkaitan pemasaran.
+                    </label><br>
+
+                    <button type="submit">Hantar</button>
+                </form>
+            </div>
+
+            <footer>
+                <span>&copy; Pantai Hospitals 2024</span>
+            </footer>
+        </main>
+    </div>
+
+<script>
+        const dateInput = document.getElementById("date-input");
+        const calendarMonth = document.getElementById("calendar-month");
+        const calendarBody = document.getElementById("calendar-body");
+
+        let currentDate = new Date();
+        let selectedDate = null;
+
+        function renderCalendar() {
+            const year = currentDate.getFullYear();
+            const month = currentDate.getMonth();
+
+            calendarMonth.textContent = `${currentDate.toLocaleString("default", { month: "long" })}, ${year}`;
+
+            // Get the first day of the month
+            const firstDay = new Date(year, month, 1).getDay();
+            const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+            // Clear previous calendar body
+            calendarBody.innerHTML = "";
+
+            // Fill in the blank days before the first day of the month
+            let row = document.createElement("tr");
+            for (let i = 0; i < firstDay; i++) {
+                const cell = document.createElement("td");
+                row.appendChild(cell);
+            }
+
+            // Fill in the days of the month
+            for (let day = 1; day <= daysInMonth; day++) {
+                if (row.children.length === 7) {
+                    calendarBody.appendChild(row);
+                    row = document.createElement("tr");
+                }
+
+                const cell = document.createElement("td");
+                cell.textContent = day;
+                cell.addEventListener("click", () => selectDate(day));
+                row.appendChild(cell);
+            }
+
+            calendarBody.appendChild(row);
+        }
+
+        function selectDate(day) {
+            selectedDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), day);
+            dateInput.value = selectedDate.toLocaleDateString();
+        }
+
+        function changeMonth(delta) {
+            currentDate.setMonth(currentDate.getMonth() + delta);
+            renderCalendar();
+        }
+
+        document.getElementById("prev-month").addEventListener("click", () => changeMonth(-1));
+        document.getElementById("next-month").addEventListener("click", () => changeMonth(1));
+
+        // Initial render
+        renderCalendar();
+    </script>
+
+</body>
+</html>

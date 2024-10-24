@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Successful</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+            margin: 0; /* Remove default margin */
+            display: flex; /* Center modal vertically and horizontally */
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; /* Full viewport height */
+        }
+
+        .container {
+            width: 90%;
+            max-width: 500px; /* Set a max width */
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            position: relative; /* Position relative for modal */
+        }
+
+        .modal {
+            display: flex; /* Change to flex to center content */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            padding: 30px; /* More padding for better spacing */
+            border-radius: 8px; /* Slightly larger radius */
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .modal-checkmark {
+            margin-bottom: 20px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        button {
+            width: 50%; /* Full width button */
+            padding: 12px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s; /* Smooth transition */
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        h2 {
+            margin-top: 0; /* Remove default margin */
+            color: black;
+            letter-spacing: 1px; /* Reduced letter-spacing for better readability */
+        }
+
+        p {
+            color: #555; /* Slightly lighter text color for the paragraph */
+            line-height: 1.5; /* Better line height for readability */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Modal Structure -->
+        <div id="successModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <div class="modal-checkmark">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="100px" height="100px">
+                        <path d="M6 12l4 4L18 6"></path>
+                    </svg>
+                </div>
+                <h2>Booking Successful</h2>
+                <p>Your deposit payment has been successfully processed. We look forward to welcoming you at the hospital.</p>
+                <button onclick="goTowardss()">Okay</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function closeModal() {
+            document.getElementById('successModal').style.display = 'none';
+        } 
+		
+		function goTowardss() {
+            // Redirect to payment history page (replace 'payment-history.html' with your actual page)
+            window.location.href = 'wardss.php'; 
+        }
+    </script>
+</body>
+</html>

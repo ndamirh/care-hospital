@@ -1,0 +1,424 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+#wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar styling */
+.sidebar {
+    width: 250px;
+    background-color: #004085;
+    color: white;
+    padding: 20px;
+}
+
+.sidebar-brand {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.sidebar-nav {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-nav li {
+    margin-bottom: 10px;
+}
+
+.sidebar-nav a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+
+.sidebar-nav a.active {
+    background-color: #007bff;
+}
+
+/* Main content area */
+#content-wrapper {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: white;
+}
+
+header.topbar {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+}
+
+/* Profile section */
+.profile-section {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-pic {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.change-photo-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Info section */
+.info-section {
+    margin: 20px 0;
+}
+
+.info-section h4 {
+    margin-bottom: 10px;
+    color: #007bff;
+}
+
+/* Footer */
+footer {
+    background-color: #f8f9fa;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+
+.container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    width: 600px;
+    justify-content: space-between;
+}
+
+/* Header section */
+.header {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.header h2 {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.header p {
+    color: #6c757d;
+    font-size: 1.1em;
+}
+
+/* Card container */
+.card-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow cards to wrap to the next line */
+    gap: 20px; /* Space between the cards */
+    justify-content: center; /* Center the cards horizontally */
+    padding: 20px;
+}
+
+/* Card styles */
+.card {
+    border: 1px solid #dee2e6;
+    border-radius: 0.375rem;
+    overflow: hidden;
+    width: 100%;
+    max-width: 300px; /* Set the width of each card */
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    display: flex;
+    flex-direction: column; /* Ensure content stacks properly */
+    justify-content: space-between; /* Distribute space evenly */
+    background-color: #fff;
+}
+
+/* Card image */
+.card img {
+    width: 100%;
+    height: 200px; /* Set fixed height for images */
+    object-fit: cover; /* Ensure images fill the area without distortion */
+}
+
+/* Card body */
+.card-body {
+    padding: 20px;
+    text-align: center;
+}
+
+.card-subtitle {
+    font-size: 1.75em;
+    color: #6c757d;
+    margin-bottom: 10px;
+}
+
+.card-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Card footer */
+.card-footer {
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-top: 1px solid #dee2e6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* List of features inside each card */
+.list-unstyled {
+    list-style: none;
+    padding: 0;
+}
+
+.list-unstyled li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* Icon for the list items */
+.icon {
+    font-size: 1.5em;
+    color: #0d6efd;
+    margin-right: 10px;
+}
+
+/* Button styling */
+.btn {
+    display: block;
+    width: 80%;
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+    background-color: #0d6efd;
+    text-decoration: none;
+    border: none;
+    border-radius: 0.375rem;
+    font-size: 1em;
+    margin: 15px auto; /* This centers the button */
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Badge for popular wards */
+
+.popular .card-body {
+    position: relative;
+}
+
+.popular .badge {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #0d6efd;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 0.375rem;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .card-container {
+        flex-direction: column; /* Stack cards vertically on small screens */
+    }
+
+    .card {
+        max-width: 100%; /* Allow the card to take full width on small screens */
+    }
+}
+
+.parallax-container {
+    height: 600px;
+    background-image: url('img/.jpg');
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.date-time-selector {
+    display: flex;
+    gap: 20px;
+}
+
+.date-picker,
+.time-picker {
+    width: 50%;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+}
+
+#date {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.calendar {
+    margin-top: 20px;
+}
+
+.calendar h3 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    text-align: center;
+    padding: 10px;
+    width: 14.28%;
+    border: 1px solid #ccc;
+}
+
+td.disabled {
+    color: #ccc;
+}
+
+.time-picker label {
+    margin-bottom: 10px;
+    display: block;
+}
+
+.time-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+button {
+    width: 45%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button.selected {
+    background-color: #004080;
+}
+
+.container {
+    display: flex;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 90%;
+    max-width: 3000px;
+}
+
+.profile-card {
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+    background-color: #f9fafc;
+    border-right: 1px solid #ddd;
+}
+
+.profile-image img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.upload-btn {
+    display: block;
+    background-color: #ff5a5f;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.edit-profile {
+    flex: 2;
+	
+    padding: 20px;
+}
+
+.edit-profile h2 {
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.update-btn {
+    background-color: #ff5a5f;
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}

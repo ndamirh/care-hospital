@@ -1,0 +1,177 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+	align:left;
+}
+
+#symptoms {
+    margin-top: 20px;
+}
+
+textarea {
+    width: 300px;
+    height: 100px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.contact-info {
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    width: 100%;
+    margin: 20px auto;
+}
+
+.contact-info ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.contact-info ul li {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.contact-info ul li img {
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.contact-info ul li a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.contact-info ul li a:hover {
+    text-decoration: underline;
+}
+
+.contact-info p {
+    font-size: 12px;
+    color: #6c757d;
+    margin-top: 20px;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+}
+
+.header-text {
+    padding-left: 15px;
+}
+
+.main-title {
+    color: #007bff;
+    font-size: 20px;
+}
+
+.sub-title {
+    color: #007bff;
+    font-size: 12px;
+    font-style: italic;
+}
+
+.nav-links {
+    margin-left: auto;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Parallax container: adjust the height and remove padding */
+.parallax-container {
+    height: 400px; /* You can adjust this height to your preference */
+    background-image: url('img/appoinment.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0; /* Remove padding if not needed */
+}
+
+
+/* Optional text inside the parallax image */
+.parallax-container p {
+    font-size: 1.5em;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* A subtle overlay if you want to keep text */
+}
+
+.container {
+    padding: 20px;
+}
